@@ -19,7 +19,7 @@ const io = require('socket.io')(server)
 //listen on every connection
 io.on('connection', (socket) => {
     socket.username = "Anonymous"
-    socket.avatar = "./avatar-default.png"
+    socket.avatar = "assets/avatar-default.png"
 
     io.sockets.emit('new_user')
 
@@ -35,13 +35,13 @@ io.on('connection', (socket) => {
 
         //Easter eggs
         if(data.username == "Zane")
-            socket.avatar = "./zane.jpg"
+            socket.avatar = "assets/zane.jpg"
         else if(data.username == "Edgar")
-            socket.avatar = "./edgar.jpg"
+            socket.avatar = "assets/edgar.jpg"
         
         //Default avatar    
         else
-            socket.avatar = "./avatar-default.png"
+            socket.avatar = "assets/avatar-default.png"
     })
 
     socket.on('new_message', (data) => {
