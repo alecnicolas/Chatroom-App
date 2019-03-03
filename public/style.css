@@ -1,0 +1,144 @@
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 85%;
+}
+
+body {
+    margin: 0px;
+    height: 100%;
+    background-color: #202020;
+    color: white;
+}
+
+button {
+    font-size: 1rem;
+    border-radius: 5px;
+    color: #202020;
+    background-color: rgb(137, 252, 204);
+    padding: .5rem 1rem;
+    font-weight: bold;
+    border: none;
+}
+
+header {
+    text-align: center;
+}
+
+input {
+    background-color: #303030;
+    color: white;
+    border: 3px solid #303030;
+    font-size: 1rem;
+    border-radius: 6px;
+}
+
+h1 {
+    font-family: 'Roboto Mono', monospace;
+    margin: 0px;
+}
+
+/* div#change_username, section#input_zone {
+    border: 5px outset #8258FA;
+} */
+
+div#change_username {
+    padding: .75rem;
+    margin: 0 1rem;
+    display: inline-block;
+    background-color: #202020;
+    border-radius: 10px;
+}
+
+section#chatroom {
+    border: 3px solid rgba(200,200,200, 0.3);
+    height: 85%;
+    overflow: auto;
+    margin: 0 1rem;
+    border-radius: 8px;
+    background-color: #202020;
+}
+
+section#input_zone {
+    padding: .75rem 0;
+    text-align: center;
+}
+
+.vertical-align {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+input#username {
+    font-family: 'Roboto Mono', monospace;
+    padding: .5rem 1rem;
+}
+
+input#message {
+    display: inline-block;
+    width: 88%;
+    padding: .75rem 1rem;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1rem;
+}
+
+input:focus {
+    border: 3px solid rgb(137, 252, 204);
+    outline: none;
+}
+
+button#send_message {
+    display: inline-block;
+    width: 10%;
+}
+
+.message-row{
+    display: flex;
+    align-items: center;
+    padding: 0 .5rem;
+}
+
+p.message {
+    margin: 0px;
+    width: 100%;
+    font-size: 1rem;
+    font-family: 'Roboto Mono', monospace;
+    padding: .6rem;
+}
+
+.connect {
+    color: rgb(137, 252, 204);
+}
+
+.disconnect {
+    color: #d36161;
+}
+
+.avatar {
+    height: 40px;
+    width: 40px;
+    border-radius: 6px;
+}
+
+.toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.clearChat {
+    margin: 0 1rem;
+}
