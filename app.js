@@ -18,15 +18,19 @@ const io = require('socket.io')(server)
 
 //listen on every connection
 io.on('connection', (socket) => {
+    //Default User
     socket.username = "Anonymous"
     socket.avatar = "assets/avatar-default.png"
 
+    //New user message
     io.sockets.emit('new_user')
 
+    //User disconnected message
     socket.on('disconnect', function() {
         io.sockets.emit('user_disconnect', {username : socket.username})
     })
 
+    //Username Handling
     socket.on('change_username', (data) => {
         if(data.username == "")
             socket.username = "Anonymous"
@@ -44,7 +48,13 @@ io.on('connection', (socket) => {
             socket.avatar = "assets/avatar-default.png"
     })
 
+    //Message Handling
     socket.on('new_message', (data) => {
         io.sockets.emit('new_message', {message : data.message, username : socket.username, avatar: socket.avatar});
+    })
+
+    //Misc
+    socket.on('typing', () => {
+        io.sockets.emit('someone_typing', socket.username)
     })
 })
